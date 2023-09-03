@@ -1,16 +1,22 @@
-import React from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 function Register() {
   const submitData = async (e) => {
     e.preventDefault();
     const data = new FormData(e.target);
-    const registerValue = Object.fromEntries(data);
-    const result = await axios.post(
-      "http://localhost:3000/api/admin",
-      registerValue
-    );
-    console.log(result);
+    const registerData = Object.fromEntries(data);
+    try {
+      await axios.post("http://localhost:3000/api/admin", registerData);
+      toast.success("Admin added, you can now log in as that admin");
+    } catch (e) {
+      const error = e.response.data;
+      if (error.includes("already exists")) {
+        toast.error("Email already exists");
+      } else {
+        toast.error(error);
+      }
+    }
   };
 
   return (

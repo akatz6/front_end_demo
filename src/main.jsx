@@ -7,6 +7,8 @@ import Register from "./components/Register.jsx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./shared/Header";
 import "./index.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -18,5 +20,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/register" element={<Register />}></Route>
       </Routes>
     </Router>
+    <ToastContainer />
   </React.StrictMode>
 );
