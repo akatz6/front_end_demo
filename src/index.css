@@ -22,3 +22,8 @@
 .btn-primary {
   height: 50px;
 }
+
+.table{
+  width: 80%;
+  margin: 0 auto;
+}
