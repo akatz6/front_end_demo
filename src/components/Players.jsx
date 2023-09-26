@@ -20,7 +20,7 @@ function Players() {
   }, []);
 
   const playerDetails = (id) => {
-    navigate(`/player/${id}`)
+    navigate(`/player/${id}`);
   };
 
   return (
@@ -33,6 +33,7 @@ function Players() {
               <th scope="col">Player Name</th>
               <th scope="col">First Name</th>
               <th scope="col">Last Name</th>
+              <th scope="col">Image</th>
               <th scope="col">Details</th>
             </tr>
           </thead>
@@ -43,6 +44,10 @@ function Players() {
                 <td>{player.player_name}</td>
                 <td>{player.first_name}</td>
                 <td>{player.last_name}</td>
+                <td>
+                  {" "}
+                  <img height="50" src={player.img} alt={player.img} />
+                </td>
                 <td>
                   {" "}
                   <button
